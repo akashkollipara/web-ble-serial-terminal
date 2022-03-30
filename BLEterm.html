@@ -7,12 +7,12 @@
 		var props;	
 		var dev;
 
-		function connect(name)
+		function connect()
 		{
 			let sUUID = "0000ffe0-0000-1000-8000-00805f9b34fb";
 			let cUUID = "0000ffe1-0000-1000-8000-00805f9b34fb";
 		
-			navigator.bluetooth.requestDevice({filters: [{services: [sUUID]}, {name: [name]}]})
+			navigator.bluetooth.requestDevice({filters: [{services: [sUUID]}]})
 			.then(device => {
 				print("< i > Connecting...\n");
 				dev = device;
@@ -95,7 +95,7 @@
 		<div class="footer">
 			<input id="input" type="text" class="input" placeholder="New Message >...">
 			<button onclick="send()">>>></button>
-			<button onclick="connect('SEM')">< / ></button>
+			<button onclick="connect()">< / ></button>
 			<button onclick="disconnect()">< x ></button>
 			</div>
 		</div>
